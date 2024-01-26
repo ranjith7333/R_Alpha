@@ -1,0 +1,51 @@
+<html>
+    <head>
+        <head>Checksheet</head>
+        <style>
+            .center{
+                position:absolute ;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%,-50%);
+            }
+            table,th,td{
+                border: 2px solid #005c14;
+                border-collapse:collapse ;
+                padding: 8px;
+                    }
+            th,td{
+                padding: 4px;
+            }
+
+        </style>
+    </head>
+   
+    <body> 
+       {% block content %}
+         <table>
+            <tr>
+                <th colspan="5">
+                    <center><h3>Clocked Hours</h3></center> <hr>
+                </th>
+            </tr>
+            <tr>
+                <center></center>
+                <th>EMPID</th>
+                <th>WONO</th>
+                <th>CATOGARY</th>
+                <th>HOURS</th>
+                <th>DESCRIPTION</th>           
+            </tr>
+            <tr>
+                <td>{{EMPID}}</td>
+                <td>{{WONO}}</td> 
+                <td>{{CATAGORY}}</td> 
+                <td>{{HOURS}}</td>     
+                <td>{{DESCRIPTION}}</td>          
+            </tr>
+
+         </table>
+       {% endblock %}
+    </body>
+
+</html>
