@@ -1,0 +1,81 @@
+<html>
+    <head>
+        <head>Home</head>
+        {% load static %}
+        <link rel="stylesheet" href="{%static 'css/style.css' %}">
+    </head>
+  
+    <body> 
+       <center><h1>Welcome to R-Alpha Management</h1> </center>
+    </body>
+
+    <style>
+        body{
+            background-color: rgba(96, 96, 96, 0.925);
+        }
+        table{
+            border: 2px solid #00ff22
+                }
+        th,td{
+            padding: 8px;
+        }
+        th{
+            text-align: right;
+        }
+        .center{
+            position:absolute ;
+            top: 40%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+        }
+
+    </style>
+
+    <body>
+      <img src="{% static 'images/ttbg.jpg' %}">
+      
+        {% block content %}
+          <form action="clocking" method="post"  autocomplete="off" >
+            {% csrf_token %}
+              <h1>Time Entry</h1>
+              <table class="center">
+                <tr>
+                    <th colspan="2">
+                        <center><h3>Clock your time sheet</h3></center> <hr>
+                    </th>
+                </tr>
+                <tr>
+                    <th>EMP ID</th>
+                    <td><input type="text" name="EMP ID"></td>                   
+                </tr>
+                <tr>
+                    <th>WO #</th>
+                    <td><input type="text" name="WO#"></td>
+                </tr>
+                <tr>
+                    <th>CATAGORY</th>
+                    <td><input type="text" name="CATAGORY"></td>
+                </tr>
+                <tr>
+                    <th>HOURS</th>
+                    <td><input type="text" name="HOURS"></td>
+                </tr>
+                <tr>
+                    <th>DESCRIPTION</th>
+                    <td><input type="text" name="DESCRIPTION"></td>
+                </tr> 
+                <tr>
+                    <th colspan="2">
+                        <Center><input type="submit" value="submit"></Center>
+                    </th>
+                </tr>
+               
+              </table>
+            
+            </form>
+    
+        {% endblock %}
+    </body>
+
+
+</html>
