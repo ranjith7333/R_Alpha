@@ -1,5 +1,13 @@
 {
-    "rewrites": [
-      { "source": "/(.*)", "destination": "/" }
+    "builds": [{
+        "src": "R_Alpha/wsgi.py",
+        "use": "@vercel/python",
+        "config": { "maxLambdaSize": "15mb", "runtime": "python3.11.4" }
+    }],
+    "routes": [
+        {
+            "src": "/(.*)",
+            "dest": "R_Alpha/wsgi.py"
+        }
     ]
-  }
+}
