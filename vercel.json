@@ -1,12 +1,5 @@
 {
-    "rotes": [
-      {
-          "src" :"/",
-          "dest" :"/"                 
-      },
-      {
-          "src" :"/home",
-          "dest" :"/"  
-      }
+    "rewrites": [
+      { "source": "/(.*)", "destination": "/" }
     ]
   }
