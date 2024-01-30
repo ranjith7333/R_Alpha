@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<head>Home</head>
+</head>
+
+<body>
+def clocking(request):
+    EMPID=request.POST ['EMP ID']   
+    WONO=request.POST ['WO#']  
+    CATAGORY=request.POST ['CATAGORY']  
+    HOURS=request.POST ['HOURS']  
+    DESCRIPTION=request.POST ['DESCRIPTION']  
+    return render(request,"checksheet.html",{'EMPID':EMPID,'WONO':WONO,'CATAGORY':CATAGORY,'HOURS':HOURS,'DESCRIPTION':DESCRIPTION})
+</body>
+
+</html>
