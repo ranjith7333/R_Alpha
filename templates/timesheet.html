@@ -1,102 +1,81 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <head>
-    <head>Home</head>
-    {% load static %}
-    <link rel="stylesheet" href="{%static 'css/logo.css' %}">
-</head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <style type="text/css">
-      
-      body{
-        margin: 0;
-      }
-      .logo img{
-        position: absolute;
-        width: 10rem;
-        left: 20px; 
-        top: 35px;
-        border-radius: 10px;
-      }
-      header{
-        width: 100%;  
-        left: 0;
-        top: 0;
-        padding: 0.5rem 0;
-        background: grey;
-      }
-      .logo{
-        display: inline-block;
-        vertical-align: middle;
-    
-       
-      }
-      nav{
-        display: inline-block;
-        text-align: right;
-        width: 95%;
-        vertical-align: middle;
-      }
-      nav ul{
-        margin: 0;
-        padding: 0;
-        list-style: none;
-      }
-      nav ul li{
-        display: inline-block;
-        margin: 1rem;
-      }
-      nav ul li a{
-        text-decoration: none;
-        color: black;
-        font-weight: bold;
-        padding: 0.2rem 0rem;
-      }
-      .tt_btn{
-        background-color: rgb(141, 15, 63);
-        padding: 0.55rem;
-        border-radius: 0.4rem;
-        cursor: pointer;
-        background: linear-gradient(to bottom, #91022d, #7a001b);
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-        transition: box-shadow 0.3s;
-      }
-      .home_bg{
-        background: url(images/homebg.jpg);
-        height: 55rem;
-        background-size: cover;
-      }
-      .brand{
-        display: inline-block;
-        text-align: middle;
-        color: white;
-        vertical-align: middle;
-      }
-    </style>
-</head>
-<body>
- <header>
-    <div class="logo">
-      <img src="images/logo1.png" alt="">
-    </div>
-    <nav>
-      <ul>
-        <li class="brand"><a href="">WELCOME TO R ALPHA MANAGEMENT</a></li>
-        <li><a href="">Login</a></li>
-        <li><a href="">Register</a></li>
-        <li class="tt_btn"><a href="home.html">Time track</a></li>
-      </ul>
-    </nav>
- </header>  
- <main>
-    <section class="homebg">
+<html>
+    <head>
+        <head>Home</head>
+        {% load static %}
+        <link rel="stylesheet" href="{%static 'css/style.css' %}">
+    </head>
+  
+    <body> 
+       <center><h1>Welcome to R-Alpha Management</h1> </center>
+    </body>
 
-    </section>
- </main>
- <center><h1>DRIVE THROUGH R ALPHA</h1></center> 
-</body>
+    <style>
+        body{
+            background-color: rgba(96, 96, 96, 0.925);
+        }
+        table{
+            border: 2px solid #00ff22
+                }
+        th,td{
+            padding: 8px;
+        }
+        th{
+            text-align: right;
+        }
+        .center{
+            position:absolute ;
+            top: 40%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+        }
+
+    </style>
+
+    <body>
+      <img src="{% static 'images/ttbg.jpg' %}">
+      
+        {% block content %}
+          <form action="clocking" method="post"  autocomplete="off" >
+            {% csrf_token %}
+              <h1>Time Entry</h1>
+              <table class="center">
+                <tr>
+                    <th colspan="2">
+                        <center><h3>Clock your time sheet</h3></center> <hr>
+                    </th>
+                </tr>
+                <tr>
+                    <th>EMP ID</th>
+                    <td><input type="text" name="EMP ID"></td>                   
+                </tr>
+                <tr>
+                    <th>WO #</th>
+                    <td><input type="text" name="WO#"></td>
+                </tr>
+                <tr>
+                    <th>CATAGORY</th>
+                    <td><input type="text" name="CATAGORY"></td>
+                </tr>
+                <tr>
+                    <th>HOURS</th>
+                    <td><input type="text" name="HOURS"></td>
+                </tr>
+                <tr>
+                    <th>DESCRIPTION</th>
+                    <td><input type="text" name="DESCRIPTION"></td>
+                </tr> 
+                <tr>
+                    <th colspan="2">
+                        <Center><input type="submit" value="submit"></Center>
+                    </th>
+                </tr>
+               
+              </table>
+            
+            </form>
+    
+        {% endblock %}
+    </body>
+
 
 </html>
