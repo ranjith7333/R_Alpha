@@ -4,13 +4,12 @@ from django.http import HttpResponse
 
 
 # Pages 
-
-def home(request):
-    return render(request,"home.html")
-    
 def index(request):
     return render(request,"index.html")
     
+def home(request):
+    return render(request,"home.html")
+       
 def clocking(request):
     EMPID=request.POST ['EMP ID']   
     WONO=request.POST ['WO#']  
